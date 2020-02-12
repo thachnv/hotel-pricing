@@ -1,9 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { formatPrice } from "./App";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("Format price should work correctly", () => {
+  expect(formatPrice(100.21, "USD")).toBe("100");
+  expect(formatPrice(300123.22, "KRW")).toBe("300,100");
 });
